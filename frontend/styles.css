@@ -1,0 +1,136 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+  text-align: center;
+}
+
+header {
+  background: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+main {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Login Section */
+#login-section {
+  background-color: #e0f7fa;
+  padding: 20px;
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: 30px;
+}
+
+/* Form styling */
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto 20px auto;
+  text-align: left;
+}
+
+form input, form textarea, form select {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+.error {
+  color: red;
+}
+
+.notice {
+  background: #fff;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto 20px auto;
+}
+
+.notice h3 {
+  margin-top: 0;
+}
+
+/* Background colors for notices based on role */
+.notice.admin {
+  background-color: #e6f7ff;
+}
+
+.notice.teacher {
+  background-color: #fff2e6;
+}
+
+/* Horizontal Tab Navigation */
+.tab-nav {
+  position: relative;
+  margin-bottom: 20px;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 10px;
+}
+
+/* Gradient overlay on the right edge for a blur effect */
+.tab-nav::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(to left, rgba(255,255,255,1), rgba(255,255,255,0));
+}
+
+.tab-button {
+  display: inline-block;
+  width: 100px; /* Fixed width for each tab */
+  margin: 5px;
+  border: none;
+  background-color: #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.tab-button.active {
+  background-color: #333;
+  color: #fff;
+}
+
+.tab-content {
+  display: block;
+}
