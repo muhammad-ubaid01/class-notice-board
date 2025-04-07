@@ -4,9 +4,25 @@ const express = require('express');
 const cors = require('cors');
 const pool = require('./db');
 const jwt = require('jsonwebtoken');
+const path = require('path');
 require('dotenv').config();
 
 const app = express();
+
+// Serve static files from "../frontend" relative to server.js
+app.use(express.static(path.join(__dirname, '../frontend')));
+
+// Example route (optional)
+app.get('/api/hello', (req, res) => {
+  res.json({ message: 'Hello from the backend!' });
+});
+
+// For any other route, serve index.html so client-side routing (if any) works
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend', 'index.html'));
+});
+
+
 
 app.use(express.json());
 app.use(cors());
