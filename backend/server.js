@@ -9,8 +9,13 @@ require('dotenv').config();
 
 const app = express();
 
+
+app.use(express.json());
+app.use(cors());
+
 // Serve static files from "../frontend" relative to server.js
 app.use(express.static(path.join(__dirname, '../frontend')));
+
 
 // Example route (optional)
 app.get('/api/hello', (req, res) => {
@@ -23,9 +28,6 @@ app.get('*', (req, res) => {
 });
 
 
-
-app.use(express.json());
-app.use(cors());
 
 // Middleware: Verify JWT token
 function verifyToken(req, res, next) {

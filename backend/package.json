@@ -4,7 +4,8 @@
   "description": "Backend for class notice board",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "vercel-build": "echo 'No build needed for Node.js server'"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
